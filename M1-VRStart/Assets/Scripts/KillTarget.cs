@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class KillTarget : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class KillTarget : MonoBehaviour
     //public GameObject killEffect;
     public float timeToSelect = 3.0f;
     public int score;
+    public TMP_Text  scoreText;
 
     Transform camera;
     private float countDown;
@@ -18,6 +21,7 @@ public class KillTarget : MonoBehaviour
         camera = Camera.main.transform;
         score = 0;
         countDown = timeToSelect;
+        scoreText.text = "Score: 0";
     }
 
     void Update()
@@ -52,6 +56,7 @@ public class KillTarget : MonoBehaviour
                 // killed 
                 //Instantiate(killEffect, target.transform.position, target.transform.rotation);
                 score += 1;
+                scoreText.text = "Score: " + score;
                 countDown = timeToSelect;
                 SetRandomPosition();
             }
