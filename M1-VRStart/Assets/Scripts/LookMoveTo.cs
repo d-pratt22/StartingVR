@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class LookMoveTo : MonoBehaviour
 {
@@ -7,14 +8,14 @@ public class LookMoveTo : MonoBehaviour
     private Transform camera;
 
     public Transform infoBubble;
-    private Text infoText;
+    private TMP_Text infoText;
 
     void Start()
     {
         camera = Camera.main.transform;
         if (infoBubble != null)
         {
-            infoText = GetComponentInChildren<Text>();
+            infoText = GetComponentInChildren<TMP_Text>();
         }
     }
 
